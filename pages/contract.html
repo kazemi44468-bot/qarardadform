@@ -102,7 +102,7 @@ function renderMarkdown(md){
   }
   return out;
 }
-const key=new URLSearchParams(location.search).get('id')?.toLowerCase(),doc=docs[key],article=document.getElementById('document'),title=document.getElementById('doc-title'),meta=document.getElementById('doc-meta'),download=document.getElementById('download-link'),status=document.getElementById('doc-status');
+const key=new URLSearchParams(location.search).get('id')?.toLowerCase(),doc=docs[key],article=document.getElementById('document'),title=document.getElementById('doc-title'),meta=document.getElementById('doc-meta'),status=document.getElementById('doc-status');
 const storageKey='qarardadform-draft-'+(key||'unknown');
 function fields(){return Array.from(article.querySelectorAll('[data-field]'))}
 function draftValues(){return fields().map((el)=>el.value)}
@@ -129,13 +129,9 @@ document.getElementById('send-destination').addEventListener('click',()=>{
  Object.entries(payload).forEach(([name,value])=>{const input=document.createElement('input');input.type='hidden';input.name=name;input.value=value;form.appendChild(input)});
  document.body.appendChild(form);form.submit();form.remove();status.textContent='درخواست ارسال به مقصد باز شد؛ ثبت نهایی به پشتیبانی مقصد بستگی دارد.';
 });
-document.getElementById('share-doc').addEventListener('click',async()=>{
- const text=(doc?doc.title:'فرم قرارداد')+'\n\n'+filledText()+'\n\nپیوند فرم: '+location.href;
- try{if(navigator.share){await navigator.share({title:doc?doc.title:'فرم قرارداد',text:text,url:location.href});if(status)status.textContent='پنجره اشتراک‌گذاری باز شد.'}else{downloadFile((key||'contract')+'-completed.txt',text,'text/plain');location.href='mailto:?subject='+encodeURIComponent(doc?doc.title:'فرم تکمیل‌شده')+'&body='+encodeURIComponent(text.slice(0,12000));if(status)status.textContent='متن فرم دریافت شد و برنامه ایمیل در صورت پشتیبانی باز می‌شود.'}}catch(e){if(status)status.textContent='اشتراک‌گذاری لغو شد یا در این مرورگر پشتیبانی نمی‌شود.'}
-});
-if(!doc){title.textContent='سند پیدا نشد';article.innerHTML='<div class="doc-error">شناسه سند معتبر نیست. از بانک قراردادها یک فرم انتخاب کنید.</div>';download.href='bank.html';status.textContent='یک سند از بانک قراردادها انتخاب کنید.'}
+if(!doc){title.textContent='سند پیدا نشد';article.innerHTML='<div class="doc-error">شناسه سند معتبر نیست. از بانک قراردادها یک فرم انتخاب کنید.</div>';status.textContent='یک سند از بانک قراردادها انتخاب کنید.'}
 else{
- document.title=doc.title+' | قرارداد فرم';title.textContent=doc.title;meta.textContent='شناسه آرشیو: '+doc.id+' · پیش‌نمایش، تکمیل آنلاین و چاپ';download.href=doc.path;download.setAttribute('download','');
+ document.title=doc.title+' | قرارداد فرم';title.textContent=doc.title;meta.textContent='شناسه آرشیو: '+doc.id+' · پیش‌نمایش، تکمیل آنلاین و چاپ';
  fetch(doc.path,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.text()}).then(md=>{
    if(!md.trim())throw new Error('empty document');
    article.innerHTML=renderMarkdown(md);restoreDraft();
