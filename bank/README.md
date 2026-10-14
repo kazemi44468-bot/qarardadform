@@ -43,6 +43,16 @@
 
 ### تجهیزات و همکاری سازمانی
 - [اجاره تجهیزات و ماشین‌آلات](08-equipment/equipment-rental.md) — EQ-001
+- [خدمات نگهداری و تعمیرات](03-business/maintenance-service.md) — BS-007
+- [فروش امانی کالا](03-business/consignment-sale.md) — BS-008
+- [نمایندگی فروش و توزیع](03-business/distribution-agency.md) — BS-009
+- [پشتیبانی نرم‌افزار و سامانه](04-digital/maintenance-support.md) — DG-004
+- [رسید دریافت وجه](06-finance/payment-receipt.md) — FN-004
+- [رسید تحویل سند تضمینی](06-finance/guarantee-document-receipt.md) — FN-005
+- [فرم ثبت درخواست یا شکایت](07-general/complaint-intake.md) — GN-006
+- [معرفی‌نامه و اجازه امور اداری](07-general/authorization-letter.md) — GN-007
+- [اجاره زمین](01-property/land-lease.md) — PR-006
+- [الحاقیه دورکاری](02-work/remote-work-addendum.md) — WK-005
 - [تفاهم‌نامه همکاری](09-corporate/memorandum-of-understanding.md) — CP-001
 - [بازاریابی و پورسانت](09-corporate/commission-marketing.md) — CP-002
 - [قرض‌الحسنه و بازپرداخت اقساطی](06-finance/interest-free-loan.md) — FN-003
@@ -55,4 +65,4 @@
 - فرم‌های رسمی یا وابسته به مرجع صادرکننده باید از نسخه رسمی همان مرجع دریافت و با وضعیت و تاریخ مشخص معرفی شوند.
 - قبل از انتشار عمومی، کنترل حقوقی، نگارشی، پیوندها و سازگاری با قوانین جاری لازم است.
 
-**وضعیت فعلی:** مجموعه آغازین ۳۱ سند/فرم عمومی؛ نیازمند توسعه، بازبینی تخصصی و ثبت تاریخ اعتبارسنجی.
+**وضعیت فعلی:** مجموعه آغازین ۴۱ سند/فرم عمومی؛ نیازمند توسعه، بازبینی تخصصی و ثبت تاریخ اعتبارسنجی.
