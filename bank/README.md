@@ -8,6 +8,7 @@
 - [قرارداد اجاره واحد مسکونی](01-property/residential-lease.md) — PR-001
 - [قرارداد اجاره محل تجاری](01-property/commercial-lease.md) — PR-002
 - [مبایعه‌نامه ملک](01-property/property-sale.md) — PR-003
+- [صورت‌جلسه تحویل ملک](01-property/property-handover.md) — PR-005
 - [مشارکت در ساخت](01-property/construction-partnership.md) — PR-004
 
 ### کار و منابع انسانی
